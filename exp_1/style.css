@@ -1,0 +1,155 @@
+/* ---------- Global ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  min-height: 100vh;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: 780px;
+  background: #ffffff;
+  margin: 40px auto;
+  padding: 35px 45px;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #ff5e62;
+}
+
+/* ---------- Form Rows ---------- */
+.row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+label {
+  width: 180px;
+  font-weight: bold;
+  padding-top: 10px;
+  color: #333;
+}
+
+/* ---------- Inputs ---------- */
+input,
+textarea,
+select {
+  width: 60%;
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #ff5e62;
+  box-shadow: 0 0 6px rgba(255, 94, 98, 0.4);
+}
+
+textarea {
+  resize: vertical;
+  height: 85px;
+}
+
+/* ---------- Extra Spacing Field ---------- */
+.field {
+  margin-bottom: 25px;
+}
+
+/* ---------- Buttons ---------- */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+button {
+  padding: 11px 35px;
+  background: #ff5e62;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e14c50;
+  transform: translateY(-1px);
+}
+
+/* ---------- Switch Login ---------- */
+.switch {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.switch a {
+  color: #ff5e62;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Cuisine Section ---------- */
+.cuisine {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.cuisine-card {
+  border: 2px solid #ccc;
+  border-radius: 14px;
+  padding: 12px;
+  width: 140px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.cuisine-card img {
+  width: 100%;
+  height: 85px;
+  object-fit: contain;
+}
+
+.cuisine-card span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cuisine-card input {
+  display: none;
+}
+
+/* ---------- Selected Cuisine ---------- */
+.cuisine-card:has(input:checked) {
+  border-color: #ff5e62;
+  background: #fff0f0;
+  box-shadow: 0 0 10px rgba(255, 94, 98, 0.6);
+}

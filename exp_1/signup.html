@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign Up | Food App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+ <h2>Create Account 🍽️</h2>
+
+ <form id="signupForm">
+
+   <div class="row">
+     <label>Name</label>
+     <input type="text" id="name" placeholder="Enter your name">
+   </div>
+
+   <div class="row">
+     <label>Email</label>
+     <input type="email" id="email" placeholder="Enter your email">
+   </div>
+
+   <div class="row">
+     <label>Phone</label>
+     <input type="tel" id="phone" placeholder="Enter phone number">
+   </div>
+
+   <div class="row">
+     <label>Country</label>
+     <select id="country">
+       <option value="">Select Country</option>
+       <option value="India">India</option>
+       <option value="USA">USA</option>
+     </select>
+   </div>
+
+   <div class="row">
+     <label>State</label>
+     <select id="state">
+       <option value="">Select State</option>
+       <option>Tamil Nadu</option>
+         <option>Kerala</option>
+         <option>Karnataka</option>
+         <option>Maharashtra</option>
+         <option>Delhi</option>
+     </select>
+   </div>
+
+   <div class="row">
+     <label>City</label>
+     <select id="city">
+       <option value="">Select City</option>
+       <option>Chennai</option>
+         <option>Madurai</option>
+         <option>Coimbatore</option>
+         <option>Bengaluru</option>
+         <option>Mumbai</option>
+
+     </select>
+   </div>
+
+   <div class="row">
+     <label>DOB</label>
+     <input type="date" id="dob">
+   </div>
+
+   <div class="row">
+     <label>Address</label>
+     <textarea id="address" placeholder="Enter your address"></textarea>
+   </div>
+
+   <div class="row">
+     <label>Password</label>
+     <input type="password" id="password" placeholder="Create password">
+   </div>
+
+   <div class="row">
+     <label>Confirm</label>
+     <input type="password" id="confirm" placeholder="Confirm password">
+   </div>
+     <div class="row">
+ <label>Preferred Cuisine</label>
+ <div class="cuisine">
+   <label class="cuisine-card">
+     <input type="checkbox" name="cuisine">
+     <img src="images/south.png" alt="South Indian">
+     <span>South Indian</span>
+   </label>
+
+   <label class="cuisine-card">
+     <input type="checkbox" name="cuisine">
+     <img src="images/north.png" alt="North Indian">
+     <span>North Indian</span>
+   </label>
+
+   <label class="cuisine-card">
+     <input type="checkbox" name="cuisine">
+     <img src="images/chinese.png" alt="Chinese">
+     <span>Chinese</span>
+   </label>
+
+   <label class="cuisine-card">
+     <input type="checkbox" name="cuisine">
+     <img src="images/italian.png" alt="Italian">
+     <span>Italian</span>
+   </label>
+ </div>
+</div>
+
+   <div class="buttons">
+     <button type="submit">Submit</button>
+     <button type="reset">Reset</button>
+   </div>
+
+   <p class="switch">
+     Already have an account?
+     <a href="login.html">Login</a>
+   </p>
+
+ </form>
+</div>
+
+<script src="signup.js"></script>
+</body>
+</html>
