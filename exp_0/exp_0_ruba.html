@@ -1,152 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Daily Habit Tracker</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: "Arial";
-            background-color: #eef3f1;
-        }
-
-        header {
-            background-color: #000000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        main {
-            width: 90%;
-            max-width: 700px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 12px rgb(0, 0, 0);
-        }
-
-        h2 {
-            color: #000000;
-        }
-        .task {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .task input[type="text"] {
-            flex: 1;
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #bbb;
-        }
-        .task input[type="checkbox"]:checked + input[type="text"] {
-            text-decoration: line-through;
-            color: gray;
-        }
-
-        .task button {
-            padding: 5px 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #000000;
-            color: rgb(0, 0, 0);
-            cursor: pointer;
-        }
-
-        textarea, select {
-            width: 100%;
-            margin-top: 6px;
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #080b05;
-        }
-
-        .note {
-            margin-top: 20px;
-        }
-
-        .center {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .center button {
-            padding: 10px 25px;
-            background-color: #e7d625;
-            color: rgb(0, 0, 0);
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #ddd;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Daily Habit Tracker</title>
+<style>
+body{margin:0;font-family:Arial;background:#eef3f1}
+header,footer{text-align:center;color:#fff;padding:15px}
+header{background:#000} footer{background:#ddd;color:#000}
+main{width:90%;max-width:700px;margin:30px auto;background:#fff;padding:25px;border-radius:10px;box-shadow:0 0 12px #000}
+.task{display:flex;gap:10px;margin:10px 0}
+.task input[type=text]{flex:1;padding:8px;border-radius:5px;border:1px solid #bbb}
+.task input:checked+input{text-decoration:line-through;color:gray}
+select,textarea{width:100%;margin-top:6px;padding:8px;border-radius:5px;border:1px solid #000}
+.center{text-align:center;margin-top:20px}
+button{padding:10px 25px;background:#e7d625;border:none;border-radius:6px;font-size:16px;cursor:pointer}
+</style>
 </head>
 
 <body>
-
-<header>
-    <h1>Daily Habit Tracker</h1>
-    <p>Record your daily tasks</p>
-</header>
+<header><h1>Daily Habit Tracker</h1><p>Record your daily tasks</p></header>
 
 <main>
+<h2>Today's Tasks</h2>
+<div class="task"><input type="checkbox"><input type="text" placeholder="Enter task"></div>
+<div class="task"><input type="checkbox"><input type="text" placeholder="Enter task"></div>
+<div class="task"><input type="checkbox"><input type="text" placeholder="Enter task"></div>
 
-    <h2>Today's Tasks</h2>
+<h2>Select Today's Priority</h2>
+<select>
+<option>Select today's focus</option><option>Gym</option>
+<option>Productivity</option><option>Learning</option><option>Reading</option>
+</select>
 
-    <div class="task">
-        <input type="checkbox">
-        <input type="text" placeholder="Enter task">
-        
-    </div>
+<h2>Personal Notes</h2>
+<textarea rows="4" placeholder="Write your thoughts..."></textarea>
 
-    <div class="task">
-        <input type="checkbox">
-        <input type="text" placeholder="Enter task">
-        
-    </div>
-
-    <div class="task">
-        <input type="checkbox">
-        <input type="text" placeholder="Enter task">
-        
-    </div>
-
-    <h2>Select Today's Priority</h2>
-
-    <select>
-        <option>Select today's focus</option>
-        <option>Gym</option>
-        <option>Productivity</option>
-        <option>Learning</option>
-        <option>Reading</option>
-    </select>
-
-    <div class="note">
-        <h2>Personal Notes</h2>
-        <textarea rows="4" placeholder="Write your thoughts or reminders..."></textarea>
-    </div>
-
-    <div class="center">
-        <button>Save</button>
-    </div>
-
+<div class="center"><button>Save</button></div>
 </main>
 
-<footer>
-    Static HTML Project
-</footer>
-
+<footer>Static HTML Project</footer>
 </body>
 </html>
