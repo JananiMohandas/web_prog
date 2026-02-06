@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REGISTRATION FORM</title>
+</head>
+
+<style>
+    .container{
+        margin: 0 auto;
+        width:max-content;
+        border-radius: 5%;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 10%;
+        background-color: bisque;
+    }
+    
+    h1{
+        text-align:center;
+        font-family:'Times New Roman', Times, serif
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    .bt{
+        text-align:center;
+        margin-top:10px;
+    }
+
+    button{
+        margin:5px;
+    }
+</style>
+
+<form>
+    <h1>Enter your Details</h1>
+    <div class="container">
+        <h2>FORM DETAILS</h2>
+
+        <label><b>Name</b></label><br>
+        <input type="text" id="name" placeholder="name" required><br>
+
+        <label><b>Email</b></label><br>
+        <input type="email" id="email" placeholder="email" required><br>
+
+        <label><b>Password</b></label><br>
+        <input type="password" id="password" placeholder="password" required><br>
+
+        <label><b>Confirm Password</b></label><br>
+        <input type="password" id="confirm" placeholder="confirm password" required><br>
+
+        <label><b>Phone number</b></label><br>
+        <input type="tel" placeholder="Phone number" required><br>
+
+        <label><b>Gender</b></label><br>
+        <input type="radio" name="g"><label>Male</label>
+        <input type="radio" name="g"><label>Female</label>
+        <input type="radio" name="g"><label>Others</label><br>
+
+        <label><b>Address</b></label><br>
+        <textarea placeholder="Enter address" required></textarea><br>
+
+        <div class="bt">
+            <button type="submit" onclick="return checkPass()">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </div>        
+</form>
+
+<script>
+function checkPass(){
+    var p = document.getElementById("password").value;
+    var cp = document.getElementById("confirm").value;
+
+    if(p !== cp){
+        alert("Enter correct password");
+        return false;
+    }
+}
+</script>
+
+</html>

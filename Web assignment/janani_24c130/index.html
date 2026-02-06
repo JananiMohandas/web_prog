@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New user Login</title>
+    <h3>New user</h3>
+    <style>
+        h3{
+            font-family: 'Rubik', sans-serif;
+            text-align: center;
+        }
+        table{
+            padding: 10px;
+            margin: 10px;
+        }
+        .container{
+            border: 2px solid black;
+            width: 500px;
+            padding: 10px;
+            margin: 10px;
+            background-color: rgb(218, 151, 120);
+            margin:auto;
+            border-radius: 20px;
+            
+        }
+        body{
+            background-color: aliceblue;
+            
+        }
+        input,label,select{
+            font-family: 'Rubik', sans-serif;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        form{
+            margin:auto
+        }
+        button{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            font-family: 'Rubik', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+    <form>
+        <table>
+            <tr>
+                <td> <label>Name:</label></td>
+                <td> <input type="text" id = "name" placeholder="Enter your name" required></td>
+            </tr>
+            <tr>
+                <td><label>Email:</label></td>
+                <td><input type="email" id = "email" placeholder="Enter email" required></td>
+            </tr>
+            <tr>
+                <td><label>Country:</label></td>
+                <td>
+                    <select>
+                        <option value="">Select your country</option>
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">UK</option>
+                        <option value="australia">Australia</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Gender:</label></td>
+                <td>
+                    <input type="radio" name = "gender" value="male">Male
+                    <input type="radio" name = "gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td><label>DOB</label></td>
+                <td><input type="date" id = "dob"></td>
+            </tr>
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input type="password" id = "password" placeholder="Enter password"></td>
+            </tr>
+            <tr>
+                <td><label>Confirm Password:</label></td>
+                <td><input type="password" id = "confirm_password" placeholder="Confirm password"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="reset">Reset</button>
+                </td>
+                <td>
+                    <button type="submit" onclick="validate()">Register</button>
+                </td>
+                
+            </tr>
+        </table>
+        
+    </form>
+    <center>
+        <a href="login.html">Already have an account?</a>
+    </center>
+  
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
