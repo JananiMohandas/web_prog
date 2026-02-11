@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Object with async/await</title>
+</head>
+<body>
+<h3 id="output">Loading...</h3>
+<button onclick="placeOrder()">Place Order</button>
+<script>
+const foodItem = {
+  name: "Veg Burger",
+  price: 120,
+  quantity: 2
+};
+async function getFoodDetails() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(foodItem);
+    }, 1000);
+  });
+}
+async function placeOrder() {
+  const food = await getFoodDetails();   
+  const total = food.price * food.quantity;
+
+  document.getElementById("output").innerText =
+    `Food: ${food.name}, Total Bill: ₹${total}`;
+}
+</script>
+</body>
+</html>
