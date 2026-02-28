@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Online Food Ordering</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: white;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .food-card {
+      background: #fafafa;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .food-info h4 {
+      font-weight: 500;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .price {
+      color: #ff5e62;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    button {
+      background: #ff5e62;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      font-size: 13px;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      background: #f0f0f0;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    #total {
+      font-weight: 600;
+      margin-top: 10px;
+      color: #333;
+      font-size: 14px;
+    }
+
+    #orderBtn {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h2>Online Food Ordering System</h2>
+
+<div class="container">
+  <div class="card">
+    <h3>Menu</h3>
+    <div id="menu"></div>
+  </div>
+
+  <div class="card">
+    <h3>Cart</h3>
+    <ul id="cart"></ul>
+    <h4 id="total">Total: ₹0</h4>
+    <button id="orderBtn">Place Order</button>
+  </div>
+</div>
+
+<script>
+  class Food {
+    constructor(id, name, price) {
+      this.id = id;
+      this.name = name;
+      this.price = price;
+    }
+  }
+
+  class OrderSystem {
+    #cart = [];
+
+    constructor(menu) {
+      this.menu = menu;
+    }
+
+    addToCart = (id) => {
+      const item = this.menu.find(food => food.id === id);
+      this.#cart.push(item);
+      this.displayCart();
+    }
+
+    displayCart() {
+      const cartUI = document.getElementById("cart");
+      const totalUI = document.getElementById("total");
+      cartUI.innerHTML = "";
+
+      let total = 0;
+
+      this.#cart.map(({ name, price }) => {
+        total += price;
+        cartUI.innerHTML += `<li>${name} - ₹${price}</li>`;
+      });
+
+      totalUI.innerText = `Total: ₹${total}`;
+    }
+
+    async placeOrder() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve("Order Placed Successfully!");
+        }, 1500);
+      });
+    }
+  }
+
+  const menuItems = [
+    new Food(1, "Burger", 120),
+    new Food(2, "Pizza", 250),
+    new Food(3, "Pasta", 180)
+  ];
+
+  const system = new OrderSystem(menuItems);
+
+  const menuDiv = document.getElementById("menu");
+
+  menuItems.map(({ id, name, price }) => {
+    menuDiv.innerHTML += `
+      <div class="food-card">
+        <div class="food-info">
+          <h4>${name}</h4>
+          <span class="price">₹${price}</span>
+        </div>
+        <button onclick="system.addToCart(${id})">Add</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("orderBtn").addEventListener("click", async () => {
+    const message = await system.placeOrder();
+    alert(message);
+  });
+</script>
+
+</body>
+</html>
