@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Food Ordering - jQuery AJAX</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1>Food Express</h1>
+
+  <div id="wrapper">
+
+    <!-- Menu -->
+    <div id="menu-section">
+      <h2>Menu</h2>
+      <div id="menu-container"></div>
+    </div>
+
+    <!-- Cart -->
+    <div id="cart-section">
+      <h2>Cart</h2>
+      <div id="cart-items">
+        <p id="empty-msg">Cart is empty.</p>
+      </div>
+      <div id="cart-footer">
+        <p>Total: ₹<span id="total-price">0</span></p>
+        <button id="place-order-btn">POST – Place Order</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Order Status -->
+  <div id="status-section">
+    <h2 id="status-title"></h2>
+    <p id="order-summary-text"></p>
+    <p id="loading-msg"></p>
+  </div>
+
+  <!-- Manage Order -->
+  <div id="manage-section">
+    <h2>Manage Last Order</h2>
+
+    <div id="put-box">
+      <h3>PUT – Update Address</h3>
+      <input type="text" id="new-address" placeholder="Enter new address" />
+      <button id="put-btn">Update Order</button>
+    </div>
+
+    <div id="delete-box">
+      <h3>DELETE – Cancel Order</h3>
+      <button id="delete-btn">Cancel Order</button>
+    </div>
+
+    <p id="manage-response"></p>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
