@@ -1,3 +1,4 @@
+
 const DUMMY_URL = "https://jsonplaceholder.typicode.com";
 
 let cart = [];
@@ -212,3 +213,4 @@ $(document).on("click", "#delete-btn", function () {
 function showMsg(msg) {
   $("#manage-response").text(msg);
 }
+
